@@ -15,6 +15,9 @@
 
   $: book = { title, author, cover, about };
 
+  // Reactive statement - destiny operator
+  $: console.log({ book });
+
   async function handleSubmit(event) {
     function getRandomInt(min, max) {
       min = Math.ceil(min);
@@ -40,6 +43,7 @@
 
 <form on:submit|preventDefault={handleSubmit}>
   <div class="fields">
+    <!-- property binding -->
     <TextInput label="Title" bind:value={title} />
     <TextInput label="Author" bind:value={author} />
     <TextInput label="Cover URL" bind:value={cover} />
